@@ -37,11 +37,11 @@ export function Playground() {
               <AnimatedChart className="h-72 w-full" />
             </div>
             <div className="mt-4 grid grid-cols-3 gap-2">
-              <button className="flex items-center justify-center gap-2 rounded-lg bg-[oklch(0.78_0.18_160/0.15)] py-2.5 text-sm font-medium text-[oklch(0.78_0.18_160)] transition-all hover:bg-[oklch(0.78_0.18_160/0.25)]">
+              <button className="flex items-center justify-center gap-2 rounded-lg bg-bull/15 py-2.5 text-sm font-semibold text-bull transition-all hover:bg-bull/25 hover:shadow-[var(--shadow-glow-bull)]">
                 <TrendingUp className="h-4 w-4" /> Buy
               </button>
-              <button className="rounded-lg glass py-2.5 text-sm">Close</button>
-              <button className="flex items-center justify-center gap-2 rounded-lg bg-[oklch(0.7_0.2_25/0.15)] py-2.5 text-sm font-medium text-[oklch(0.7_0.2_25)] transition-all hover:bg-[oklch(0.7_0.2_25/0.25)]">
+              <button className="rounded-lg glass py-2.5 text-sm font-medium">Close</button>
+              <button className="flex items-center justify-center gap-2 rounded-lg bg-bear/15 py-2.5 text-sm font-semibold text-bear transition-all hover:bg-bear/25">
                 <TrendingDown className="h-4 w-4" /> Sell
               </button>
             </div>
@@ -95,7 +95,7 @@ export function Playground() {
                   <div className="mt-2 h-1.5 rounded-full bg-background overflow-hidden">
                     <div className="h-full rounded-full" style={{
                       width: `${c.s}%`,
-                      background: c.s > 60 ? "var(--gradient-gold)" : c.s > 45 ? "oklch(0.78 0.16 235)" : "oklch(0.5 0.05 260)"
+                      background: c.s > 60 ? "var(--gradient-gold)" : c.s > 45 ? "var(--gradient-bull)" : "var(--gradient-bear)"
                     }} />
                   </div>
                 </div>
