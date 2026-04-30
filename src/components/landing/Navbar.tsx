@@ -17,10 +17,16 @@ export function Navbar() {
             </div>
           </Link>
           <div className="hidden items-center gap-8 md:flex">
-            {["Learn", "Tools", "AI", "Articles"].map((l) => (
-              <a key={l} href={`#${l.toLowerCase()}`} className="text-sm text-muted-foreground transition-colors hover:text-primary">
-                {l}
-              </a>
+            {[
+              { label: "Learn", to: "/learn" },
+              { label: "Tools", to: "/tools" },
+              { label: "AI", to: "/ai" },
+              { label: "Articles", to: "/articles" },
+              { label: "About", to: "/about" },
+            ].map((l) => (
+              <Link key={l.to} to={l.to} className="text-sm text-muted-foreground transition-colors hover:text-primary" activeProps={{ className: "text-primary font-medium" }}>
+                {l.label}
+              </Link>
             ))}
           </div>
           <div className="flex items-center gap-2">
