@@ -136,8 +136,6 @@
   --shadow-glow-primary: 0 0 0 1px oklch(0.32 0.13 268 / 0.25), 0 10px 40px -10px oklch(0.32 0.13 268 / 0.45);
   --shadow-elevated: 0 20px 60px -20px oklch(0.22 0.1 268 / 0.25);
 }
-  --shadow-elevated: 0 20px 60px -20px oklch(0.28 0.08 255 / 0.25);
-}
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
