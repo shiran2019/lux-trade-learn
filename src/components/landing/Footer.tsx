@@ -33,7 +33,7 @@ export function Footer() {
           </div>
           {cols.map((c) => (
             <div key={c.t}>
-              <div className="font-display text-sm font-semibold">{c.t}</div>
+              <Link to={c.to} className="font-display text-sm font-semibold transition-colors hover:text-primary">{c.t}</Link>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 {c.l.map((i) => (
                   <li key={i}><a href="#" className="transition-colors hover:text-primary">{i}</a></li>
