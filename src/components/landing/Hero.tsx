@@ -36,7 +36,7 @@ export function Hero() {
           <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Learn Forex Trading
             <br />
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-gold-shine)" }}>Visually with AI</span>
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-aurora)" }}>Visually with AI</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: "0.2s" }}>
@@ -47,7 +47,7 @@ export function Hero() {
             <Button variant="hero" size="xl">
               Start Learning <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button variant="neon" size="xl">
+            <Button variant="gold" size="xl">
               <Play className="h-4 w-4" /> Open Trading Playground
             </Button>
           </div>
