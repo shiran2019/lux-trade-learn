@@ -59,7 +59,7 @@ export function Playground() {
               <div>
                 <div className="flex justify-between text-xs text-muted-foreground"><span>Risk per trade</span><span className="text-primary">{risk}%</span></div>
                 <input type="range" min="0.5" max="5" step="0.5" value={risk} onChange={(e) => setRisk(+e.target.value)}
-                  className="mt-2 w-full accent-[oklch(0.82_0.14_86)]" />
+                  className="mt-2 w-full accent-[oklch(0.32_0.13_268)]" />
               </div>
               <div>
                 <div className="flex justify-between text-xs text-muted-foreground"><span>Stop loss</span><span>{stopPips} pips</span></div>
