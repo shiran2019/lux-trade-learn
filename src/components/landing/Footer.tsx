@@ -1,12 +1,13 @@
+import { Link } from "@tanstack/react-router";
 import { LineChart, Twitter, Youtube, Github, Linkedin } from "lucide-react";
 
 export function Footer() {
   const cols = [
-    { t: "Learn", l: ["Beginner Path", "Technical Analysis", "Risk Management", "Psychology"] },
-    { t: "Tools", l: ["Playground", "Risk Calculator", "Strategy Builder", "Journal"] },
-    { t: "Articles", l: ["Latest", "Basics", "Advanced", "Glossary"] },
-    { t: "About", l: ["Mission", "Team", "Careers", "Contact"] },
-  ];
+    { t: "Learn", to: "/learn", l: ["Beginner Path", "Technical Analysis", "Risk Management", "Psychology"] },
+    { t: "Tools", to: "/tools", l: ["Playground", "Risk Calculator", "Strategy Builder", "Journal"] },
+    { t: "Articles", to: "/articles", l: ["Latest", "Basics", "Advanced", "Glossary"] },
+    { t: "About", to: "/about", l: ["Mission", "Team", "Careers", "Contact"] },
+  ] as const;
   return (
     <footer className="relative border-t border-border/60 pt-20 pb-10">
       <div className="mx-auto max-w-7xl px-4">
