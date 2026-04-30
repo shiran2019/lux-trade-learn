@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--gradient-gold)] glow-gold">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg  glow-gold" style={{ background: "var(--gradient-gold)" }}>
                 <LineChart className="h-5 w-5 text-primary-foreground" />
               </div>
               <div>

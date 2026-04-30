@@ -23,7 +23,7 @@ export function Features() {
           {features.map((f, i) => (
             <div key={f.title} className="group glass hover-lift relative overflow-hidden rounded-2xl p-6">
               <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--gradient-gold)] glow-gold">
+              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl  glow-gold" style={{ background: "var(--gradient-gold)" }}>
                 <f.icon className="h-6 w-6 text-primary-foreground" />
               </div>
               <h3 className="font-display text-xl font-semibold">{f.title}</h3>
