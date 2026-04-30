@@ -59,7 +59,7 @@ export function Hero() {
       </div>
 
       {/* Live ticker */}
-      <div className="relative mt-20 overflow-hidden border-y border-border/50 bg-[oklch(0.18_0.025_260/0.6)] py-3 backdrop-blur">
+      <div className="relative mt-20 overflow-hidden border-y border-border/60 bg-secondary/40 py-3 backdrop-blur">
         <div className="flex w-max gap-12 animate-ticker">
           {[...ticker, ...ticker].map((t, i) => (
             <div key={i} className="flex items-center gap-3 whitespace-nowrap text-sm">

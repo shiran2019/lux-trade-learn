@@ -33,7 +33,7 @@ export function Playground() {
                 ))}
               </div>
             </div>
-            <div className="rounded-xl border border-border/60 bg-[oklch(0.13_0.02_260)] p-2">
+            <div className="rounded-xl border border-border/60 bg-secondary/40 p-2">
               <AnimatedChart className="h-72 w-full" />
             </div>
             <div className="mt-4 grid grid-cols-3 gap-2">
