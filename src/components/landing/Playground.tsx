@@ -64,7 +64,7 @@ export function Playground() {
               <div>
                 <div className="flex justify-between text-xs text-muted-foreground"><span>Stop loss</span><span>{stopPips} pips</span></div>
                 <div className="mt-2 h-1.5 rounded-full bg-secondary overflow-hidden">
-                  <div className="h-full " style={{ width: "40%" style={{ background: "var(--gradient-gold)" }} }} />
+                  <div className="h-full" style={{ width: "40%", background: "var(--gradient-gold)" }} />
                 </div>
               </div>
 
