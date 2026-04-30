@@ -16,9 +16,10 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-[image:var(--gradient-gold-shine)] text-primary-foreground font-semibold shadow-[var(--shadow-glow-gold)] hover:scale-[1.02] hover:shadow-[0_0_0_1px_oklch(0.68_0.18_75/0.6),0_15px_50px_-10px_oklch(0.68_0.18_75/0.7)] transition-all duration-300",
-        neon: "glass text-foreground border border-[oklch(0.55_0.2_245/0.4)] hover:border-[oklch(0.55_0.2_245/0.8)] hover:shadow-[var(--shadow-glow-neon)] transition-all duration-300",
-        glass: "glass text-foreground hover:border-[oklch(0.68_0.18_75/0.5)] hover:shadow-[var(--shadow-glow-gold)] transition-all duration-300",
+        hero: "bg-[image:var(--gradient-primary)] text-white font-semibold shadow-[var(--shadow-glow-primary)] hover:scale-[1.02] transition-all duration-300 ring-1 ring-inset ring-white/10",
+        gold: "bg-[image:var(--gradient-gold-shine)] text-white font-semibold shadow-[var(--shadow-glow-gold)] hover:scale-[1.02] transition-all duration-300",
+        neon: "glass text-foreground border border-primary/40 hover:border-primary hover:shadow-[var(--shadow-glow-primary)] transition-all duration-300",
+        glass: "glass text-foreground hover:border-primary/50 hover:shadow-[var(--shadow-glow-primary)] transition-all duration-300",
       },
       size: {
         default: "h-9 px-4 py-2",
