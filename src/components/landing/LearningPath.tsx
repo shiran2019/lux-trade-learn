@@ -31,7 +31,7 @@ export function LearningPath() {
                   <h3 className="font-display text-xl font-semibold">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
                   <div className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-secondary/50 px-3 py-1 text-xs text-muted-foreground">
-                    <span className="h-1.5 w-1.5 rounded-full bg-bull" /> {s.duration}
+                    <span className="h-1.5 w-1.5 rounded-md bg-bull" /> {s.duration}
                   </div>
                 </div>
               </div>

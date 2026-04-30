@@ -26,7 +26,7 @@ function AboutPage() {
             { n: "4.9/5", l: "Avg. rating" },
             { n: "120+", l: "Lessons & tools" },
           ].map((s) => (
-            <div key={s.l} className="glass-strong rounded-2xl p-8 text-center">
+            <div key={s.l} className="glass-strong rounded-md p-8 text-center">
               <div className="font-display text-4xl font-bold text-gradient-gold">{s.n}</div>
               <div className="mt-2 text-sm text-muted-foreground">{s.l}</div>
             </div>

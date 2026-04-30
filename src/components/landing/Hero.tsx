@@ -22,13 +22,13 @@ export function Hero() {
       <div className="absolute inset-x-0 top-20 -z-10 opacity-30">
         <AnimatedChart className="h-[500px] w-full" />
       </div>
-      <div className="absolute -left-32 top-40 h-72 w-72 rounded-full bg-[oklch(0.82_0.14_86/0.25)] blur-3xl animate-glow-pulse" />
-      <div className="absolute -right-32 top-60 h-96 w-96 rounded-full bg-[oklch(0.78_0.16_235/0.2)] blur-3xl animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
+      <div className="absolute -left-32 top-40 h-72 w-72 rounded-md bg-[oklch(0.82_0.14_86/0.25)] blur-3xl animate-glow-pulse" />
+      <div className="absolute -right-32 top-60 h-96 w-96 rounded-md bg-[oklch(0.78_0.16_235/0.2)] blur-3xl animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
 
       <div className="relative mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs animate-fade-up">
-            <span className="flex h-2 w-2 rounded-full bg-bull animate-pulse" />
+          <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs animate-fade-up">
+            <span className="flex h-2 w-2 rounded-md bg-bull animate-pulse" />
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             <span className="font-medium text-foreground">AI-powered learning · Markets open</span>
           </div>

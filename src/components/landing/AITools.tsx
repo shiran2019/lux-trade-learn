@@ -13,14 +13,14 @@ export function AITools() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <div className="mb-3 inline-block rounded-full border border-[oklch(0.78_0.16_235/0.4)] bg-[oklch(0.78_0.16_235/0.05)] px-3 py-1 text-xs uppercase tracking-widest text-[oklch(0.78_0.16_235)]">AI Suite</div>
+            <div className="mb-3 inline-block rounded-md border border-[oklch(0.78_0.16_235/0.4)] bg-[oklch(0.78_0.16_235/0.05)] px-3 py-1 text-xs uppercase tracking-widest text-[oklch(0.78_0.16_235)]">AI Suite</div>
             <h2 className="font-display text-4xl font-bold sm:text-5xl">An AI tutor that <span className="text-gradient-gold">trades alongside you</span></h2>
             <p className="mt-4 text-muted-foreground">Ask questions in plain English, paste screenshots of your trades, and get personalized feedback in seconds.</p>
 
             <div className="mt-8 grid grid-cols-2 gap-3">
               {tools.map((t) => (
-                <button key={t.title} className={`group glass hover-lift flex items-center gap-3 rounded-xl p-4 text-left ${t.color === "neon" ? "hover:border-[oklch(0.78_0.16_235/0.6)]" : ""}`}>
-                  <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${t.color === "primary" ? "bg-primary/15 text-primary" : "bg-[oklch(0.78_0.16_235/0.15)] text-[oklch(0.78_0.16_235)]"}`}>
+                <button key={t.title} className={`group glass hover-lift flex items-center gap-3 rounded-md p-4 text-left ${t.color === "neon" ? "hover:border-[oklch(0.78_0.16_235/0.6)]" : ""}`}>
+                  <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md ${t.color === "primary" ? "bg-primary/15 text-primary" : "bg-[oklch(0.78_0.16_235/0.15)] text-[oklch(0.78_0.16_235)]"}`}>
                     <t.icon className="h-5 w-5" />
                   </div>
                   <span className="text-sm font-medium">{t.title}</span>

@@ -18,7 +18,7 @@ export function PageShell({ children, eyebrow, title, description }: PageShellPr
           <div className="absolute inset-0 grid-bg opacity-30 -z-10" />
           <div className="mx-auto max-w-5xl px-4 text-center">
             {eyebrow && (
-              <div className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-widest text-primary">
+              <div className="mb-4 inline-block rounded-md border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-widest text-primary">
                 {eyebrow}
               </div>
             )}

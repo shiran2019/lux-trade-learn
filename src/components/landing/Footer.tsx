@@ -16,7 +16,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <div className="relative flex h-9 w-9 items-center justify-center rounded-md text-white" style={{ background: "var(--gradient-primary)" }}>
                 <LineChart className="h-5 w-5" strokeWidth={2.5} />
-                <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full" style={{ background: "var(--gradient-gold)" }} />
+                <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-md" style={{ background: "var(--gradient-gold)" }} />
               </div>
               <div>
                 <div className="font-display font-bold">AI Forex Academy</div>
@@ -26,7 +26,7 @@ export function Footer() {
             <p className="mt-5 max-w-sm text-sm text-muted-foreground">A premium education platform combining AI tutors, interactive tools, and structured courses to teach forex the right way.</p>
             <div className="mt-6 flex gap-3">
               {[Twitter, Youtube, Github, Linkedin].map((I, i) => (
-                <a key={i} href="#" className="flex h-9 w-9 items-center justify-center rounded-lg glass transition-colors hover:text-primary">
+                <a key={i} href="#" className="flex h-9 w-9 items-center justify-center rounded-md glass transition-colors hover:text-primary">
                   <I className="h-4 w-4" />
                 </a>
               ))}

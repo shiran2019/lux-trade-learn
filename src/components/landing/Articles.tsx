@@ -15,19 +15,19 @@ export function Articles() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <div className="mb-3 inline-block rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-widest text-primary">Learning Hub</div>
+            <div className="mb-3 inline-block rounded-md border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-widest text-primary">Learning Hub</div>
             <h2 className="font-display text-4xl font-bold sm:text-5xl">Fresh, focused <span className="text-gradient-gold">articles</span></h2>
           </div>
           <div className="flex flex-wrap gap-2">
             {["All", "Basics", "Technical", "Risk", "Psychology"].map((c, i) => (
-              <button key={c} className={`rounded-full px-4 py-1.5 text-xs transition-colors ${i === 0 ? "bg-primary text-primary-foreground" : "glass text-muted-foreground hover:text-foreground"}`}>{c}</button>
+              <button key={c} className={`rounded-md px-4 py-1.5 text-xs transition-colors ${i === 0 ? "bg-primary text-primary-foreground" : "glass text-muted-foreground hover:text-foreground"}`}>{c}</button>
             ))}
           </div>
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((a) => (
-            <article key={a.title} className="group glass hover-lift overflow-hidden rounded-2xl">
+            <article key={a.title} className="group glass hover-lift overflow-hidden rounded-md">
               <div className="relative h-40 overflow-hidden border-b border-border/60" style={{ background: `linear-gradient(135deg, ${a.color}/0.2, transparent)` }}>
                 <div className="absolute inset-0 grid-bg opacity-50" />
                 <AnimatedChart className="absolute inset-0 h-full w-full opacity-70 transition-transform duration-500 group-hover:scale-105" />
