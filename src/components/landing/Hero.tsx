@@ -27,15 +27,16 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs animate-fade-up">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs animate-fade-up">
+            <span className="flex h-2 w-2 rounded-full bg-bull animate-pulse" />
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            <span className="text-muted-foreground">AI-powered learning · Now in beta</span>
+            <span className="font-medium text-foreground">AI-powered learning · Markets open</span>
           </div>
 
           <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Learn Forex Trading
             <br />
-            <span className="shimmer-text">Visually with AI</span>
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-gold-shine)" }}>Visually with AI</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: "0.2s" }}>
