@@ -61,7 +61,7 @@ export function AnimatedChart({ className = "" }: { className?: string }) {
         { x: 620, h: 28, c: "down" },
         { x: 700, h: 55, c: "up" },
       ].map((c, i) => {
-        const color = c.c === "up" ? "oklch(0.78 0.18 160)" : "oklch(0.65 0.22 25)";
+        const color = c.c === "up" ? "oklch(0.62 0.18 155)" : "oklch(0.6 0.23 25)";
         const y = 200 - c.h / 2;
         return (
           <g key={i} opacity="0.7">

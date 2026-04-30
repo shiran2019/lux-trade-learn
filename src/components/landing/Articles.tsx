@@ -1,12 +1,12 @@
 import { AnimatedChart } from "./AnimatedChart";
 
 const articles = [
-  { cat: "Basics", title: "What actually moves currency prices?", time: "6 min", color: "oklch(0.82 0.14 86)" },
-  { cat: "Technical", title: "Reading candlestick patterns the right way", time: "9 min", color: "oklch(0.78 0.16 235)" },
-  { cat: "Risk", title: "Position sizing for small accounts", time: "5 min", color: "oklch(0.78 0.18 160)" },
-  { cat: "Psychology", title: "Why your best setups still lose", time: "8 min", color: "oklch(0.7 0.15 300)" },
-  { cat: "Technical", title: "Multi-timeframe analysis in 4 steps", time: "11 min", color: "oklch(0.78 0.16 235)" },
-  { cat: "Basics", title: "A complete glossary for new traders", time: "4 min", color: "oklch(0.82 0.14 86)" },
+  { cat: "Basics", title: "What actually moves currency prices?", time: "6 min", color: "oklch(0.68 0.18 75)" },
+  { cat: "Technical", title: "Reading candlestick patterns the right way", time: "9 min", color: "oklch(0.55 0.2 245)" },
+  { cat: "Risk", title: "Position sizing for small accounts", time: "5 min", color: "oklch(0.6 0.23 25)" },
+  { cat: "Psychology", title: "Why your best setups still lose", time: "8 min", color: "oklch(0.28 0.08 255)" },
+  { cat: "Technical", title: "Multi-timeframe analysis in 4 steps", time: "11 min", color: "oklch(0.55 0.2 245)" },
+  { cat: "Basics", title: "A complete glossary for new traders", time: "4 min", color: "oklch(0.62 0.18 155)" },
 ];
 
 export function Articles() {

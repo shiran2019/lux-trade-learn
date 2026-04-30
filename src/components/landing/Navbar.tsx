@@ -8,8 +8,8 @@ export function Navbar() {
       <div className="mx-auto mt-4 max-w-7xl px-4">
         <nav className="glass-strong flex items-center justify-between rounded-2xl px-4 py-3 sm:px-6">
           <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--gradient-gold)] glow-gold">
-              <LineChart className="h-5 w-5 text-primary-foreground" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg glow-gold" style={{ background: "var(--gradient-gold)" }}>
+              <LineChart className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
             </div>
             <div className="leading-tight">
               <div className="font-display text-sm font-bold">AI Forex</div>
