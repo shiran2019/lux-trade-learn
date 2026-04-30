@@ -65,7 +65,10 @@ export function Hero() {
             <div key={i} className="flex items-center gap-3 whitespace-nowrap text-sm">
               <span className="font-display font-semibold tracking-wide">{t.p}</span>
               <span className="text-muted-foreground">{t.v}</span>
-              <span className={t.up ? "text-[oklch(0.78_0.18_160)]" : "text-[oklch(0.7_0.2_25)]"}>{t.d}</span>
+              <span className={`flex items-center gap-1 font-semibold ${t.up ? "text-bull" : "text-bear"}`}>
+                <span>{t.d}</span>
+                <span className="text-[10px]">{t.up ? "▲" : "▼"}</span>
+              </span>
             </div>
           ))}
         </div>
