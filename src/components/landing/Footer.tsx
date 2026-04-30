@@ -14,8 +14,9 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg  glow-gold" style={{ background: "var(--gradient-gold)" }}>
-                <LineChart className="h-5 w-5 text-primary-foreground" />
+              <div className="relative flex h-9 w-9 items-center justify-center rounded-md text-white" style={{ background: "var(--gradient-primary)" }}>
+                <LineChart className="h-5 w-5" strokeWidth={2.5} />
+                <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full" style={{ background: "var(--gradient-gold)" }} />
               </div>
               <div>
                 <div className="font-display font-bold">AI Forex Academy</div>
