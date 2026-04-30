@@ -30,40 +30,40 @@ export function AITools() {
           </div>
 
           {/* Mock AI chat */}
-          <div className="glass-strong relative rounded-3xl p-6 glow-gold">
-            <div className="absolute -top-3 left-6 rounded-full  px-3 py-1 text-xs font-semibold text-primary-foreground" style={{ background: "var(--gradient-gold)" }}>AI Tutor · Live</div>
+          <div className="glass-strong relative rounded-md p-6" style={{ boxShadow: "var(--shadow-glow-primary)" }}>
+            <div className="absolute -top-3 left-6 rounded-md px-3 py-1 text-xs font-semibold text-white" style={{ background: "var(--gradient-primary)" }}>AI Tutor · Live</div>
 
             <div className="mt-4 space-y-4">
               <div className="flex gap-3">
-                <div className="h-8 w-8 shrink-0 rounded-full bg-secondary" />
-                <div className="rounded-2xl rounded-tl-sm bg-secondary/50 px-4 py-3 text-sm">
+                <div className="h-8 w-8 shrink-0 rounded-md bg-secondary" />
+                <div className="rounded-md bg-secondary/50 px-4 py-3 text-sm">
                   Hey! I just opened a long on EUR/USD at 1.0820. What do you think?
                 </div>
               </div>
               <div className="flex justify-end gap-3">
-                <div className="rounded-2xl rounded-tr-sm bg-[oklch(0.82_0.14_86/0.15)] border border-primary/30 px-4 py-3 text-sm">
+                <div className="rounded-md border border-primary/30 bg-primary/5 px-4 py-3 text-sm">
                   Looking at the 15M chart — you entered right at a clean support flip with bullish momentum. Solid setup. 👌
                   <div className="mt-2 text-xs text-muted-foreground">Suggest a stop at 1.0795 (25 pip risk) for a 1:3 R:R targeting 1.0895.</div>
                 </div>
-                <div className="h-8 w-8 shrink-0 rounded-full  glow-gold" style={{ background: "var(--gradient-gold)" }} />
+                <div className="h-8 w-8 shrink-0 rounded-md text-white flex items-center justify-center text-xs font-bold" style={{ background: "var(--gradient-primary)" }}>AI</div>
               </div>
               <div className="flex gap-3">
-                <div className="h-8 w-8 shrink-0 rounded-full bg-secondary" />
-                <div className="rounded-2xl rounded-tl-sm bg-secondary/50 px-4 py-3 text-sm">
+                <div className="h-8 w-8 shrink-0 rounded-md bg-secondary" />
+                <div className="rounded-md bg-secondary/50 px-4 py-3 text-sm">
                   What if price breaks below 1.0795?
                 </div>
               </div>
               <div className="flex justify-end gap-3">
-                <div className="rounded-2xl rounded-tr-sm bg-[oklch(0.82_0.14_86/0.15)] border border-primary/30 px-4 py-3 text-sm">
-                  Then the bullish thesis is invalidated. Close it, journal it, move on. <span className="text-primary">No revenge trades.</span>
+                <div className="rounded-md border border-primary/30 bg-primary/5 px-4 py-3 text-sm">
+                  Then the bullish thesis is invalidated. Close it, journal it, move on. <span className="text-bear font-medium">No revenge trades.</span>
                 </div>
-                <div className="h-8 w-8 shrink-0 rounded-full  glow-gold" style={{ background: "var(--gradient-gold)" }} />
+                <div className="h-8 w-8 shrink-0 rounded-md text-white flex items-center justify-center text-xs font-bold" style={{ background: "var(--gradient-primary)" }}>AI</div>
               </div>
             </div>
 
-            <div className="mt-6 flex items-center gap-2 rounded-xl border border-border/60 bg-background/50 px-4 py-3">
+            <div className="mt-6 flex items-center gap-2 rounded-md border border-border/60 bg-background/50 px-4 py-3">
               <input placeholder="Ask anything about your trade…" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground" />
-              <button className="rounded-lg  px-3 py-1.5 text-xs font-semibold text-primary-foreground" style={{ background: "var(--gradient-gold)" }}>Send</button>
+              <button className="rounded-md px-3 py-1.5 text-xs font-semibold text-white" style={{ background: "var(--gradient-primary)" }}>Send</button>
             </div>
           </div>
         </div>
