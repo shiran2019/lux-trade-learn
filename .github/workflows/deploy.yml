@@ -34,12 +34,34 @@ jobs:
       - name: Check dist/client folder
         run: ls -la dist/client/
 
-      - name: List files in dist/client
-        run: find dist/client -type f | head -20
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/client
           force_orphan: true
+
+      - name: Print deployment URL
+        run: echo "✅ Deployed to ${{ steps.deployment.outputs.page_url }}"
