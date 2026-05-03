@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TradeMasteryAI | Free AI-Powered Forex Trading Tools & Education</title>
+    <script>
+      // GitHub Pages SPA redirect for 404 handling
+      if (window.location.pathname.endsWith('.html') === false && 
+          window.location.pathname !== '/' &&
+          !window.location.pathname.includes('.')) {
+        sessionStorage.redirect = window.location.pathname + window.location.search + window.location.hash;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/assets/entry-client.js"></script>
+  </body>
+</html>
