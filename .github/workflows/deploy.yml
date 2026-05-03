@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -30,8 +31,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
+      - name: Check dist/client folder
+        run: ls -la dist/client/
+
+      - name: List files in dist/client
+        run: find dist/client -type f | head -20
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/client
+          force_orphan: true
