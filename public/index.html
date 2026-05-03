@@ -73,8 +73,17 @@
     <div id="error"></div>
     <script type="module">
       console.log('Starting module...');
+      
+      // Detect base path from current URL
+      const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '/';
+      const entryClientPath = basePath.endsWith('/') ? basePath + 'assets/entry-client.js' : basePath + '/assets/entry-client.js';
+      
+      console.log('Base path:', basePath);
+      console.log('Entry client path:', entryClientPath);
+      console.log('Full URL:', window.location.origin + entryClientPath);
+      
       try {
-        import('/assets/entry-client.js').then(() => {
+        import(entryClientPath).then(() => {
           console.log('Entry client loaded successfully');
         }).catch(err => {
           console.error('Failed to load entry client:', err);
