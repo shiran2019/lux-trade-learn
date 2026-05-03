@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ToolsRouteImport } from './routes/tools'
 import { Route as LearnRouteImport } from './routes/learn'
-import { Route as ArticlesRouteImport } from './routes/articles'
+import { Route as FreeToolsRouteImport } from './routes/free-tools'
 import { Route as AiRouteImport } from './routes/ai'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -26,9 +26,9 @@ const LearnRoute = LearnRouteImport.update({
   path: '/learn',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ArticlesRoute = ArticlesRouteImport.update({
-  id: '/articles',
-  path: '/articles',
+const FreeToolsRoute = FreeToolsRouteImport.update({
+  id: '/free-tools',
+  path: '/free-tools',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AiRoute = AiRouteImport.update({
@@ -51,7 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai': typeof AiRoute
-  '/articles': typeof ArticlesRoute
+  '/free-tools': typeof FreeToolsRoute
   '/learn': typeof LearnRoute
   '/tools': typeof ToolsRoute
 }
@@ -59,7 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai': typeof AiRoute
-  '/articles': typeof ArticlesRoute
+  '/free-tools': typeof FreeToolsRoute
   '/learn': typeof LearnRoute
   '/tools': typeof ToolsRoute
 }
@@ -68,23 +68,23 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai': typeof AiRoute
-  '/articles': typeof ArticlesRoute
+  '/free-tools': typeof FreeToolsRoute
   '/learn': typeof LearnRoute
   '/tools': typeof ToolsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/ai' | '/articles' | '/learn' | '/tools'
+  fullPaths: '/' | '/about' | '/ai' | '/free-tools' | '/learn' | '/tools'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/ai' | '/articles' | '/learn' | '/tools'
-  id: '__root__' | '/' | '/about' | '/ai' | '/articles' | '/learn' | '/tools'
+  to: '/' | '/about' | '/ai' | '/free-tools' | '/learn' | '/tools'
+  id: '__root__' | '/' | '/about' | '/ai' | '/free-tools' | '/learn' | '/tools'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AiRoute: typeof AiRoute
-  ArticlesRoute: typeof ArticlesRoute
+  FreeToolsRoute: typeof FreeToolsRoute
   LearnRoute: typeof LearnRoute
   ToolsRoute: typeof ToolsRoute
 }
@@ -105,11 +105,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/articles': {
-      id: '/articles'
-      path: '/articles'
-      fullPath: '/articles'
-      preLoaderRoute: typeof ArticlesRouteImport
+    '/free-tools': {
+      id: '/free-tools'
+      path: '/free-tools'
+      fullPath: '/free-tools'
+      preLoaderRoute: typeof FreeToolsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ai': {
@@ -140,7 +140,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AiRoute: AiRoute,
-  ArticlesRoute: ArticlesRoute,
+  FreeToolsRoute: FreeToolsRoute,
   LearnRoute: LearnRoute,
   ToolsRoute: ToolsRoute,
 }

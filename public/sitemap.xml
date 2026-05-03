@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page - Highest Priority -->
+  <url>
+    <loc>https://trademasteryai.com/</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Trading Tools/Playground - High Priority -->
+  <url>
+    <loc>https://trademasteryai.com/tools</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Learning Lab - High Priority -->
+  <url>
+    <loc>https://trademasteryai.com/learn</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- AI Trading Tools -->
+  <url>
+    <loc>https://trademasteryai.com/ai</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Free Tools/Downloads -->
+  <url>
+    <loc>https://trademasteryai.com/free-tools</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>bi-weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- About Us -->
+  <url>
+    <loc>https://trademasteryai.com/about</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { AnimatedChart } from "./AnimatedChart";
-import { TrendingUp, TrendingDown } from "lucide-react";
+import { TrendingUp, TrendingDown, BarChart2, ShieldCheck, Layers } from "lucide-react";
 
 export function Playground() {
   const [risk, setRisk] = useState(2);
@@ -15,7 +16,33 @@ export function Playground() {
         <div className="mx-auto max-w-2xl text-center">
           <div className="mb-3 inline-block rounded-md border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-widest text-primary">Hands-on</div>
           <h2 className="font-display text-4xl font-bold sm:text-5xl">Practice in our <span className="text-gradient-gold">live playground</span></h2>
-          <p className="mt-4 text-muted-foreground">Real charts, real mechanics, zero risk. Learn by doing.</p>
+          <p className="mt-4 text-muted-foreground">
+            Real charts, real mechanics, zero risk. Learn by doing — simulate trades, manage position sizing, and read live currency strength, all in one place.
+          </p>
+
+          {/* feature pills */}
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {[
+              { icon: BarChart2, label: "Live candlestick simulator" },
+              { icon: ShieldCheck, label: "Risk & position sizing" },
+              { icon: Layers, label: "Currency strength meter" },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-2 rounded-full border border-border/60 bg-secondary/50 px-4 py-1.5 text-xs text-muted-foreground">
+                <Icon className="h-3.5 w-3.5 text-primary" />
+                {label}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/tools"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow-primary)] transition-all hover:opacity-90 hover:shadow-lg"
+            >
+              Go to Learning Lab →
+            </Link>
+          </div>
         </div>
 
         <div className="mt-16 grid gap-5 lg:grid-cols-3">

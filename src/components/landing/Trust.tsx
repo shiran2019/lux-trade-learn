@@ -19,7 +19,7 @@ export function Trust() {
               <p className="mt-5 max-w-md text-muted-foreground">Forex involves substantial risk and is not suitable for every investor. Our mission is to make sure you trade with knowledge, discipline, and a real edge.</p>
 
               <div className="mt-6 rounded-md border border-border/60 bg-background/40 p-4 text-xs text-muted-foreground">
-                <strong className="text-foreground">Risk disclaimer:</strong> Past performance is not indicative of future results. You should never trade with money you cannot afford to lose. AI Forex Academy is an educational platform and does not provide financial advice.
+                <strong className="text-foreground">Risk disclaimer:</strong> Past performance is not indicative of future results. You should never trade with money you cannot afford to lose. 
               </div>
             </div>
 

@@ -1,0 +1,32 @@
+# robots.txt for TradeMasteryAI - Forex Trading Education Platform
+
+User-agent: *
+Allow: /
+Allow: /tools
+Allow: /learn
+Allow: /ai
+Allow: /about
+Disallow: /admin
+Disallow: /api/private
+Disallow: /*.json$
+Disallow: /*.xml$
+Crawl-delay: 1
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+Sitemap: https://trademasteryai.com/sitemap.xml

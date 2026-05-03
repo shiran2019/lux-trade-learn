@@ -6,8 +6,11 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About — AI Forex Academy" },
-      { name: "description", content: "Our mission is to teach forex with honesty, clarity, and AI-powered tools — not gambling tricks." },
+      { title: "About TradeMasteryAI | Mission, Team & Vision" },
+      { name: "description", content: "TradeMasteryAI mission: teach forex trading with honesty, clarity, and AI tools. Learn from experienced traders and educators. US-based trading education platform." },
+      { name: "keywords", content: "about trading education, forex platform, trading school, forex education mission, trading community, traders team, learning platform" },
+      { property: "og:title", content: "About TradeMasteryAI" },
+      { property: "og:description", content: "Learn our mission: honest, clear forex education with AI tools. Built by traders for traders." },
     ],
   }),
 });

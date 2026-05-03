@@ -3,10 +3,10 @@ import { LineChart, Twitter, Youtube, Github, Linkedin } from "lucide-react";
 
 export function Footer() {
   const cols = [
-    { t: "Learn", to: "/learn", l: ["Beginner Path", "Technical Analysis", "Risk Management", "Psychology"] },
-    { t: "Tools", to: "/tools", l: ["Playground", "Risk Calculator", "Strategy Builder", "Journal"] },
-    { t: "Articles", to: "/articles", l: ["Latest", "Basics", "Advanced", "Glossary"] },
-    { t: "About", to: "/about", l: ["Mission", "Team", "Careers", "Contact"] },
+    { t: "Learn", to: "/learn", l: ["Beginner Path", "Technical Analysis", "Risk Management", "Trading Psychology"] },
+    { t: "Free Tools", to: "/tools", l: ["Live Trading Playground", "Risk Calculator", "Strategy Builder", "Trading Journal"] },
+    { t: "AI Trading", to: "/ai", l: ["ChatGPT for Trading", "AI Bots", "Prompt Templates", "Forex Analysis"] },
+    { t: "About", to: "/about", l: ["Our Mission", "Team", "Contact", "Blog"] },
   ] as const;
   return (
     <footer className="relative border-t border-border/60 pt-20 pb-10">
@@ -19,11 +19,11 @@ export function Footer() {
                 <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-md" style={{ background: "var(--gradient-gold)" }} />
               </div>
               <div>
-                <div className="font-display font-bold">AI Forex Academy</div>
-                <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Trade with knowledge</div>
+                <div className="font-display font-bold">TradeMasteryAI</div>
+                <div className="text-[10px] uppercase tracking-widest text-muted-foreground">TradeMasteryAI.com</div>
               </div>
             </div>
-            <p className="mt-5 max-w-sm text-sm text-muted-foreground">A premium education platform combining AI tutors, interactive tools, and structured courses to teach forex the right way.</p>
+            <p className="mt-5 max-w-sm text-sm text-muted-foreground">Free forex trading education platform. Learn technical analysis, gold scalper strategies, and trading psychology with AI tutors, interactive simulators, and premium trading tools for US traders.</p>
             <div className="mt-6 flex gap-3">
               {[Twitter, Youtube, Github, Linkedin].map((I, i) => (
                 <a key={i} href="#" className="flex h-9 w-9 items-center justify-center rounded-md glass transition-colors hover:text-primary">
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-6 text-xs text-muted-foreground sm:flex-row">
-          <div>© {new Date().getFullYear()} AI Forex Academy. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} TradeMasteryAI.com. All rights reserved.</div>
           <div className="max-w-xl text-center sm:text-right">Risk warning: Trading foreign exchange carries a high level of risk and may not be suitable for all investors.</div>
         </div>
       </div>

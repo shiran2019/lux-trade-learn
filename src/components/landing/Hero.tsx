@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Play } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { AnimatedChart } from "./AnimatedChart";
 
 const ticker = [
@@ -34,22 +35,30 @@ export function Hero() {
           </div>
 
           <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Learn Forex Trading
+            <span className="relative inline-block px-3 py-0.5">
+              <span className="hero-blur-primary absolute inset-0 rounded-lg backdrop-blur-2xl" />
+              <span className="relative">Learn Forex Trading</span>
+            </span>
             <br />
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-aurora)" }}>Visually with AI</span>
+            <span className="relative mt-1 inline-block px-3 py-0.5">
+              <span className="hero-blur-secondary absolute inset-0 rounded-lg backdrop-blur-2xl" />
+              <span className="relative bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-aurora)" }}>Visually with AI</span>
+            </span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Master trading step-by-step with interactive charts, an AI tutor, and real-time playgrounds — no jargon, no gimmicks.
+            Free forex trading education platform with AI tutors, interactive simulators, gold scalper strategies, and real-time technical analysis — no jargon, no gimmicks. Perfect for US traders.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <Button variant="hero" size="xl">
               Start Learning <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button variant="gold" size="xl">
-              <Play className="h-4 w-4" /> Open Trading Playground
-            </Button>
+            <Link to="/tools">
+              <Button variant="gold" size="xl">
+                <Play className="h-4 w-4" /> Open Learning Lab
+              </Button>
+            </Link>
           </div>
 
           <div className="mt-8 flex items-center justify-center gap-6 text-xs text-muted-foreground animate-fade-up" style={{ animationDelay: "0.4s" }}>

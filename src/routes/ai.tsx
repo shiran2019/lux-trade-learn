@@ -1,13 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/landing/PageShell";
-import { AITools } from "@/components/landing/AITools";
+import { AITradingGuide } from "@/components/landing/AITradingGuide";
 
 export const Route = createFileRoute("/ai")({
   component: AIPage,
   head: () => ({
     meta: [
-      { title: "AI Tutor & Tools — AI Forex Academy" },
-      { name: "description", content: "Personalized AI feedback on your trades, charts, and journal. Learn faster with an AI tutor." },
+      { title: "AI Trading Tools | ChatGPT & AI Bots for Forex | Free Tools" },
+      { name: "description", content: "Learn forex with free AI trading tools. Use ChatGPT, Claude, Gemini for trading analysis. Prompt templates, AI bot guides, and AI-assisted trading workflow." },
+      { name: "keywords", content: "AI trading tools, ChatGPT trading, forex AI bot, automated trading, AI analysis, forex bot, free trading tools, AI assistance, machine learning trading" },
+      { property: "og:title", content: "AI Trading Tools & Bots | Free Forex AI Analysis" },
+      { property: "og:description", content: "Use free AI tools for forex trading. ChatGPT, Claude, Gemini bots, prompt templates, and daily AI-assisted trading workflow." },
     ],
   }),
 });
@@ -15,11 +18,11 @@ export const Route = createFileRoute("/ai")({
 function AIPage() {
   return (
     <PageShell
-      eyebrow="AI Suite"
-      title={<>An AI tutor that <span className="text-gradient-gold">trades alongside you</span></>}
-      description="Ask questions in plain English, paste screenshots of trades, and get personalized feedback in seconds."
+      eyebrow="AI for Trading"
+      title={<>Use AI to learn trading <span className="text-gradient-gold">smarter & faster</span></>}
+      description="Public AI tools, ready-to-use prompt templates, bot types explained, and a daily AI-assisted trading workflow — all free."
     >
-      <AITools />
+      <AITradingGuide />
     </PageShell>
   );
 }

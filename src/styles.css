@@ -185,6 +185,56 @@
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
 
+/* ─── Dark Mode Variables ──────────────────────────────────────────────────── */
+html.dark {
+  --background: oklch(0.11 0.022 268);
+  --foreground: oklch(0.94 0.006 260);
+
+  --surface: oklch(0.14 0.024 268);
+  --surface-2: oklch(0.18 0.024 268);
+
+  --card: oklch(0.15 0.022 268);
+  --card-foreground: oklch(0.94 0.006 260);
+  --popover: oklch(0.15 0.022 268);
+  --popover-foreground: oklch(0.94 0.006 260);
+
+  --primary: oklch(0.65 0.18 268);
+  --primary-foreground: oklch(0.08 0.02 268);
+
+  --secondary: oklch(0.2 0.024 268);
+  --secondary-foreground: oklch(0.85 0.01 260);
+
+  --muted: oklch(0.22 0.02 268);
+  --muted-foreground: oklch(0.56 0.025 265);
+
+  --accent: oklch(0.22 0.04 268);
+  --accent-foreground: oklch(0.9 0.005 260);
+
+  --destructive: oklch(0.65 0.23 25);
+  --destructive-foreground: oklch(0.99 0.005 260);
+
+  --border: oklch(0.26 0.024 268);
+  --input: oklch(0.22 0.024 268);
+  --ring: oklch(0.65 0.18 268);
+
+  --gradient-glass: linear-gradient(135deg, oklch(1 0 0 / 0.07), oklch(1 0 0 / 0.03));
+  --gradient-hero:
+    radial-gradient(1200px 600px at 85% -10%, oklch(0.55 0.22 295 / 0.28), transparent 60%),
+    radial-gradient(900px 500px at 0% 20%, oklch(0.45 0.18 268 / 0.28), transparent 60%),
+    radial-gradient(700px 400px at 50% 110%, oklch(0.74 0.17 78 / 0.18), transparent 60%),
+    linear-gradient(180deg, oklch(0.11 0.022 268), oklch(0.13 0.02 268));
+
+  --shadow-elevated: 0 20px 60px -20px oklch(0 0 0 / 0.55);
+  --shadow-glow-primary: 0 0 0 1px oklch(0.65 0.18 268 / 0.35), 0 10px 40px -10px oklch(0.65 0.18 268 / 0.5);
+}
+
+html.dark body {
+  background-image:
+    radial-gradient(800px 400px at 90% 0%, oklch(0.74 0.17 78 / 0.06), transparent 60%),
+    radial-gradient(600px 300px at 0% 30%, oklch(0.55 0.18 245 / 0.07), transparent 60%);
+  background-attachment: fixed;
+}
+
 @layer utilities {
   .glass {
     background: var(--gradient-glass);
@@ -233,5 +283,31 @@
     background-clip: text;
     color: transparent;
     animation: shimmer 3s linear infinite;
+  }
+
+  /* Dark mode glass overrides */
+  html.dark .glass {
+    background: linear-gradient(135deg, oklch(1 0 0 / 0.07), oklch(1 0 0 / 0.03));
+    border: 1px solid oklch(1 0 0 / 0.09);
+    box-shadow: 0 1px 2px oklch(0 0 0 / 0.35);
+  }
+  html.dark .glass-strong {
+    background: linear-gradient(135deg, oklch(1 0 0 / 0.11), oklch(1 0 0 / 0.06));
+    border: 1px solid oklch(1 0 0 / 0.11);
+    box-shadow: 0 4px 24px -8px oklch(0 0 0 / 0.45);
+  }
+
+  /* Hero heading blur backgrounds — light & dark */
+  .hero-blur-primary {
+    background: oklch(1 0 0 / 0.75);
+  }
+  html.dark .hero-blur-primary {
+    background: oklch(0.1 0.022 268 / 0.78);
+  }
+  .hero-blur-secondary {
+    background: oklch(1 0 0 / 0.65);
+  }
+  html.dark .hero-blur-secondary {
+    background: oklch(0.1 0.022 268 / 0.68);
   }
 }
