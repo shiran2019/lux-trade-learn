@@ -10,27 +10,27 @@ export function Playground() {
   const positionSize = ((balance * (risk / 100)) / stopPips).toFixed(2);
 
   return (
-    <section id="tools" className="relative py-16 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="tools" className="relative py-12 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 grid-bg opacity-30" />
       <div className="relative mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <div className="mb-3 inline-block rounded-md border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-widest text-primary">Hands-on</div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">Practice in our <span className="text-gradient-gold">live playground</span></h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground">
+          <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold">Practice in our <span className="text-gradient-gold">live playground</span></h2>
+          <p className="mt-2 sm:mt-4 text-xs sm:text-base text-muted-foreground">
             Real charts, real mechanics, zero risk. Learn by doing — simulate trades, manage position sizing, and read live currency strength, all in one place.
           </p>
 
           {/* feature pills */}
-          <div className="mt-4 sm:mt-6 flex flex-wrap justify-center gap-2 sm:gap-3">
+          <div className="mt-3 sm:mt-6 flex flex-wrap justify-center gap-2 sm:gap-3">
             {[
               { icon: BarChart2, label: "Live candlestick simulator" },
               { icon: ShieldCheck, label: "Risk & position sizing" },
               { icon: Layers, label: "Currency strength meter" },
             ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2 rounded-full border border-border/60 bg-secondary/50 px-3 sm:px-4 py-1.5 text-xs text-muted-foreground">
-                <Icon className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+              <div key={label} className="flex items-center gap-1.5 rounded-full border border-border/60 bg-secondary/50 px-2.5 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs text-muted-foreground">
+                <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-primary flex-shrink-0" />
                 <span className="hidden sm:inline">{label}</span>
-                <span className="sm:hidden text-[10px]">{label.split(" ")[0]}</span>
+                <span className="sm:hidden">{label.split(" ")[0]}</span>
               </div>
             ))}
           </div>
@@ -46,7 +46,7 @@ export function Playground() {
           </div>
         </div>
 
-        <div className="mt-10 sm:mt-16 grid gap-4 sm:gap-5 lg:grid-cols-3">
+        <div className="mt-6 sm:mt-16 grid gap-3 sm:gap-5 lg:grid-cols-3">
           {/* Chart sim */}
           <div className="glass-strong relative overflow-hidden rounded-md p-3 sm:p-5 lg:col-span-2">
             <div className="mb-3 sm:mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -61,8 +61,8 @@ export function Playground() {
                 ))}
               </div>
             </div>
-            <div className="rounded-md border border-border/60 bg-secondary/40 p-2">
-              <AnimatedChart className="h-48 sm:h-72 w-full" />
+              <div className="rounded-md border border-border/60 bg-secondary/40 p-2">
+              <AnimatedChart className="h-36 sm:h-72 w-full" />
             </div>
             <div className="mt-3 sm:mt-4 grid grid-cols-3 gap-2">
               <button className="flex items-center justify-center gap-2 rounded-md bg-bull/15 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-bull transition-all hover:bg-bull/25 hover:shadow-[var(--shadow-glow-bull)]">
@@ -105,7 +105,7 @@ export function Playground() {
           </div>
 
           {/* Pair visualizer */}
-          <div className="glass-strong rounded-md p-3 sm:p-5 lg:col-span-3">
+          <div className="hidden sm:block glass-strong rounded-md p-3 sm:p-5 lg:col-span-3">
             <div className="mb-3 sm:mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div>
                 <div className="text-xs uppercase tracking-widest text-primary">Strength Meter</div>
