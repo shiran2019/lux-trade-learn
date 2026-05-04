@@ -10,7 +10,7 @@ export function FreeTools({ preview = false }) {
 
   const handleMasteryDownload = () => {
     const link = document.createElement("a");
-    link.href = "/tools/MasteryAI.zip";
+    link.href = "/lux-trade-learn/tools/MasteryAI.zip";
     link.download = "MasteryAI.zip";
     document.body.appendChild(link);
     link.click();
@@ -19,7 +19,7 @@ export function FreeTools({ preview = false }) {
 
   const handleGTMDownload = () => {
     const link = document.createElement("a");
-    link.href = "/tools/GTM pro.zip";
+    link.href = "/lux-trade-learn/tools/GTM pro.zip";
     link.download = "GTM pro.zip";
     document.body.appendChild(link);
     link.click();
