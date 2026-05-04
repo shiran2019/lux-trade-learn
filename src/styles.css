@@ -299,15 +299,15 @@ html.dark body {
 
   /* Hero heading blur backgrounds — light & dark */
   .hero-blur-primary {
-    background: oklch(1 0 0 / 0.75);
+    background: oklch(1 0 0 / 0.40);
   }
   html.dark .hero-blur-primary {
-    background: oklch(0.1 0.022 268 / 0.78);
+    background: oklch(0.1 0.022 268 / 0.40);
   }
   .hero-blur-secondary {
-    background: oklch(1 0 0 / 0.65);
+    background: oklch(1 0 0 / 0.30);
   }
   html.dark .hero-blur-secondary {
-    background: oklch(0.1 0.022 268 / 0.68);
+    background: oklch(0.1 0.022 268 / 0.35);
   }
 }

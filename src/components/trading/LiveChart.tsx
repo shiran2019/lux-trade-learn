@@ -657,34 +657,34 @@ export function LiveChart({ onPriceUpdate }: Props) {
       <Tour active={tour.active} stepIndex={tour.stepIndex} steps={tour.steps} onNext={tour.next} onPrev={tour.prev} onClose={tour.stop} containerRef={containerRef} />
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-3">
-          <div className="font-display text-lg font-bold">EUR/USD</div>
-          <div className={`font-display text-xl font-bold ${priceChange >= 0 ? "text-bull" : "text-bear"}`}>
+        <div className="flex items-center gap-2">
+          <div className="font-display text-base sm:text-lg font-bold">EUR/USD</div>
+          <div className={`font-display text-base sm:text-xl font-bold ${priceChange >= 0 ? "text-bull" : "text-bear"}`}>
             {lastCandle?.close.toFixed(5)}
           </div>
-          <span className={`rounded-md px-1.5 py-0.5 text-xs font-medium ${priceChange >= 0 ? "bg-bull/10 text-bull" : "bg-bear/10 text-bear"}`}>
+          <span className={`rounded-md px-1.5 py-0.5 text-[10px] sm:text-xs font-medium ${priceChange >= 0 ? "bg-bull/10 text-bull" : "bg-bear/10 text-bear"}`}>
             {priceChange >= 0 ? "+" : ""}{priceChangePct.toFixed(3)}%
           </span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <div data-tour="lc-trend-badge"><MarketOverlay trend={trend} breakout={breakout} /></div>
           <button onClick={tour.start} className="flex items-center gap-1 rounded-lg border border-primary/20 bg-primary/5 px-2 py-1 text-[11px] font-medium text-primary hover:bg-primary/10 transition-colors" title="Take Live Chart tour">
-            <HelpCircle className="h-3 w-3" /> Tour
+            <HelpCircle className="h-3 w-3" /> <span className="hidden sm:inline">Tour</span>
           </button>
         </div>
       </div>
 
       {/* Scenario selector */}
-      <div data-tour="lc-scenarios" className="flex flex-wrap gap-1.5">
+      <div data-tour="lc-scenarios" className="flex flex-wrap gap-1">
         {SCENARIOS.map((s) => (
           <button key={s.id} onClick={() => handleScenario(s.id)}
-            className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
+            className={`flex items-center gap-1 rounded-md px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium transition-all ${
               scenario === s.id
                 ? "bg-primary/15 text-primary border border-primary/30 shadow-[var(--shadow-glow-primary)]"
                 : "text-muted-foreground hover:bg-secondary border border-transparent"
             }`}
             title={s.desc}>
-            {s.icon}{s.label}
+            {s.icon}<span className="hidden sm:inline">{s.label}</span><span className="sm:hidden text-[10px]">{s.label.split(" ")[0]}</span>
           </button>
         ))}
         <div className="ml-auto flex items-center gap-1">
@@ -694,27 +694,37 @@ export function LiveChart({ onPriceUpdate }: Props) {
             {showSR ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
           </button>
           <button data-tour="lc-ai-btn" onClick={() => setShowExplainer((v) => !v)}
-            className={`flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs font-medium transition-all ${
+            className={`flex items-center gap-1 rounded-md px-2 sm:px-2.5 py-1 sm:py-1.5 text-xs font-medium transition-all ${
               showExplainer ? "bg-primary/15 text-primary border border-primary/30" : "text-muted-foreground hover:bg-secondary border border-transparent"
             }`}>
-            <Activity className="h-3.5 w-3.5" /> AI Analysis
+            <Activity className="h-3.5 w-3.5" /> <span className="hidden sm:inline">AI Analysis</span><span className="sm:hidden">AI</span>
           </button>
         </div>
       </div>
 
       {/* Timeframe + controls */}
-      <div className="flex items-center gap-2">
-        <div data-tour="lc-timeframes" className="flex gap-0.5">
-          {TIMEFRAMES.map((tf) => (
-            <button key={tf} onClick={() => handleTimeframe(tf)}
-              className={`rounded px-2.5 py-1 text-xs transition-colors ${
-                timeframe === tf ? "bg-primary/15 text-primary font-semibold" : "text-muted-foreground hover:bg-secondary"
-              }`}>{tf}</button>
-          ))}
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          <div data-tour="lc-timeframes" className="flex gap-0.5 overflow-x-auto">
+            {TIMEFRAMES.map((tf) => (
+              <button key={tf} onClick={() => handleTimeframe(tf)}
+                className={`rounded px-2 sm:px-2.5 py-1 text-xs transition-colors whitespace-nowrap ${
+                  timeframe === tf ? "bg-primary/15 text-primary font-semibold" : "text-muted-foreground hover:bg-secondary"
+                }`}>{tf}</button>
+            ))}
+          </div>
+          <div className="ml-auto">
+            <button data-tour="lc-live-btn" onClick={() => setIsLive((v) => !v)}
+              className={`flex items-center gap-1.5 rounded-md px-2 sm:px-2.5 py-1 sm:py-1.5 text-xs font-medium transition-all ${
+                isLive ? "bg-bull/10 text-bull border border-bull/20" : "text-muted-foreground hover:bg-secondary border border-transparent"
+              }`}>
+              {isLive ? <><Play className="h-3 w-3 fill-current" /> Live</> : <><Pause className="h-3 w-3" /> Paused</>}
+            </button>
+          </div>
         </div>
-        <div className="ml-auto flex items-center gap-1.5">
-          {/* Indicator tabs */}
-          <div data-tour="lc-indicators" className="flex items-center gap-0.5">
+        {/* Indicator tabs */}
+        <div className="flex items-center gap-0.5 flex-wrap">
+          <div data-tour="lc-indicators" className="flex items-center gap-0.5 flex-wrap">
           {(["ma", "bb", "rsi", "stoch", "macd", "ichimoku", "atr"] as Exclude<Indicator, "none">[]).map((ind) => {
             const tooltips: Record<Exclude<Indicator, "none">, string> = {
               ma: "Moving Averages (SMA 20/50) — see trend direction at different speeds",
@@ -741,13 +751,6 @@ export function LiveChart({ onPriceUpdate }: Props) {
             ✕ Clear
           </button>
           </div>
-          <div className="mx-1 h-4 w-px bg-border" />
-          <button data-tour="lc-live-btn" onClick={() => setIsLive((v) => !v)}
-            className={`flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-medium transition-all ${
-              isLive ? "bg-bull/10 text-bull border border-bull/20" : "text-muted-foreground hover:bg-secondary border border-transparent"
-            }`}>
-            {isLive ? <><Play className="h-3 w-3 fill-current" /> Live</> : <><Pause className="h-3 w-3" /> Paused</>}
-          </button>
         </div>
       </div>
 

@@ -9,28 +9,28 @@ const steps = [
 
 export function LearningPath() {
   return (
-    <section className="relative py-28">
-      <div className="mx-auto max-w-7xl px-4">
+    <section className="relative py-16 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <div className="mb-3 inline-block rounded-md border border-violet/40 bg-violet/5 px-3 py-1 text-xs uppercase tracking-widest text-violet">Roadmap</div>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">Your path to <span className="text-gradient-gold">consistent trading</span></h2>
-          <p className="mt-4 text-muted-foreground">A clear, gradual progression — no overwhelm, no skipping fundamentals.</p>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">Your path to <span className="text-gradient-gold">consistent trading</span></h2>
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground">A clear, gradual progression — no overwhelm, no skipping fundamentals.</p>
         </div>
 
-        <div className="relative mt-20">
+        <div className="relative mt-12 sm:mt-16 lg:mt-20">
           <div className="absolute left-0 right-0 top-8 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" />
 
-          <div className="grid gap-6 lg:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 lg:grid-cols-4">
             {steps.map((s, i) => (
               <div key={s.title} className="relative">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-md text-white shadow-lg" style={{ background: s.bg }}>
-                  <s.icon className="h-7 w-7" />
+                <div className="mx-auto mb-3 sm:mb-4 flex h-14 sm:h-16 w-14 sm:w-16 items-center justify-center rounded-md text-white shadow-lg" style={{ background: s.bg }}>
+                  <s.icon className="h-6 sm:h-7 w-6 sm:w-7" />
                 </div>
-                <div className="glass hover-lift rounded-md p-6 text-center">
+                <div className="glass hover-lift rounded-md p-4 sm:p-6 text-center">
                   <div className="mb-1 text-xs uppercase tracking-widest text-primary">Step 0{i + 1}</div>
-                  <h3 className="font-display text-xl font-semibold">{s.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-                  <div className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-secondary/50 px-3 py-1 text-xs text-muted-foreground">
+                  <h3 className="font-display text-lg sm:text-xl font-semibold">{s.title}</h3>
+                  <p className="mt-2 text-xs sm:text-sm text-muted-foreground">{s.desc}</p>
+                  <div className="mt-3 sm:mt-4 inline-flex items-center gap-1.5 rounded-md bg-secondary/50 px-2.5 sm:px-3 py-1 text-xs text-muted-foreground">
                     <span className="h-1.5 w-1.5 rounded-md bg-bull" /> {s.duration}
                   </div>
                 </div>

@@ -193,11 +193,11 @@ export function AdvancedPlayground() {
       )}
 
       {/* Level + stats bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div data-tour="level-badge">
           <LevelBadge level={level} onUpgrade={upgradeLevel} />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <SessionStatsBar stats={sessionStats} />
           <button
             onClick={tour.start}
@@ -220,7 +220,7 @@ export function AdvancedPlayground() {
               data-tour={`tab-${tab.id}`}
               onClick={() => unlocked && setActiveTab(tab.id)}
               disabled={!unlocked}
-              className={`flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-medium transition-all whitespace-nowrap flex-1 justify-center ${
+              className={`flex items-center gap-1.5 rounded-lg px-2 sm:px-3 py-2 text-xs font-medium transition-all whitespace-nowrap flex-1 justify-center ${
                 isActive
                   ? "bg-white text-foreground dark:text-black shadow-sm border border-border/40"
                   : unlocked
@@ -228,9 +228,9 @@ export function AdvancedPlayground() {
                   : "text-muted-foreground/40 cursor-not-allowed"
               }`}
               title={!unlocked ? `Unlock by advancing to ${tab.minLevel} level` : tab.desc}>
-              {!unlocked && <Lock className="h-3 w-3" />}
+              {!unlocked && <Lock className="h-3 w-3 shrink-0" />}
               {tab.icon}
-              <span className="hidden sm:inline">{tab.label}</span>
+              <span>{tab.label}</span>
             </button>
           );
         })}
@@ -253,15 +253,15 @@ export function AdvancedPlayground() {
       )}
 
       {/* Tab content */}
-      <div className="min-h-[480px]">
+      <div className="min-h-[400px]">
         {/* Chart + Trade side-by-side on large screens */}
         {activeTab === "chart" && (
-          <div className={`grid gap-5 ${level !== "beginner" ? "xl:grid-cols-[1fr_320px]" : ""}`}>
-            <div className="glass-strong rounded-xl p-5">
+          <div className={`grid gap-4 ${level !== "beginner" ? "xl:grid-cols-[1fr_320px]" : ""}`}>
+            <div className="glass-strong rounded-xl p-3 sm:p-5">
               <LiveChart onPriceUpdate={handlePriceUpdate} />
             </div>
             {level !== "beginner" && (
-              <div className="glass-strong rounded-xl p-5">
+              <div className="glass-strong rounded-xl p-3 sm:p-5">
                 <TradePanel
                   currentPrice={currentPrice}
                   currentCandle={currentCandle}
@@ -274,11 +274,11 @@ export function AdvancedPlayground() {
         )}
 
         {activeTab === "trade" && (
-          <div className="grid gap-5 xl:grid-cols-[1fr_340px]">
-            <div className="glass-strong rounded-xl p-5">
+          <div className="grid gap-4 xl:grid-cols-[1fr_340px]">
+            <div className="glass-strong rounded-xl p-3 sm:p-5">
               <LiveChart onPriceUpdate={handlePriceUpdate} />
             </div>
-            <div className="glass-strong rounded-xl p-5">
+            <div className="glass-strong rounded-xl p-3 sm:p-5">
               <TradePanel
                 currentPrice={currentPrice}
                 currentCandle={currentCandle}
@@ -290,13 +290,13 @@ export function AdvancedPlayground() {
         )}
 
         {activeTab === "risk" && (
-          <div className="glass-strong rounded-xl p-5">
+          <div className="glass-strong rounded-xl p-3 sm:p-5">
             <RiskLab />
           </div>
         )}
 
         {activeTab === "scenarios" && (
-          <div className="glass-strong rounded-xl p-5">
+          <div className="glass-strong rounded-xl p-3 sm:p-5">
             <ScenarioLab />
           </div>
         )}

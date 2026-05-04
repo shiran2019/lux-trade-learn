@@ -13,10 +13,10 @@ export function PageShell({ children, eyebrow, title, description }: PageShellPr
     <div className="min-h-screen">
       <Navbar />
       <main>
-        <section className="relative overflow-hidden pt-32 pb-12 sm:pt-40">
+        <section className="relative overflow-hidden pt-32 pb-12 sm:pt-40 px-4 sm:px-6 lg:px-8">
           <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
           <div className="absolute inset-0 grid-bg opacity-30 -z-10" />
-          <div className="mx-auto max-w-5xl px-4 text-center">
+          <div className="mx-auto max-w-5xl text-center">
             {eyebrow && (
               <div className="mb-4 inline-block rounded-md border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-widest text-primary">
                 {eyebrow}

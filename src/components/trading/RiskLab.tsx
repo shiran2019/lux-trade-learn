@@ -285,16 +285,16 @@ export function RiskLab() {
       </div>
 
       {/* Main metrics */}
-      <div data-tour="rl-metrics" className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div data-tour="rl-metrics" className="grid grid-cols-2 gap-2 sm:gap-3 sm:grid-cols-4">
         {[
           { label: "Position Size", value: positionSize.toFixed(2) + " lots", sub: `$${notional.toLocaleString(undefined, { maximumFractionDigits: 0 })} notional`, good: true },
           { label: "Margin Required", value: "$" + margin.toFixed(0), sub: `at ${leverage}:1 leverage`, good: margin < balance * 0.3 },
           { label: "Max Loss", value: "$" + riskAmount.toFixed(0), sub: `${riskPct}% of account`, good: riskPct <= 2 },
           { label: "Target Profit", value: "$" + potentialGain.toFixed(0), sub: `at ${tpPips.toFixed(0)} pips TP`, good: true },
         ].map((m) => (
-          <div key={m.label} className={`rounded-lg border p-3 ${m.good ? "border-border/60 bg-secondary/30" : "border-bear/20 bg-bear/5"}`}>
+          <div key={m.label} className={`rounded-lg border p-2 sm:p-3 ${m.good ? "border-border/60 bg-secondary/30" : "border-bear/20 bg-bear/5"}`}>
             <div className="text-[10px] text-muted-foreground mb-1">{m.label}</div>
-            <div className={`font-display text-lg font-bold ${m.good ? "text-foreground" : "text-bear"}`}>{m.value}</div>
+            <div className={`font-display text-base sm:text-lg font-bold ${m.good ? "text-foreground" : "text-bear"}`}>{m.value}</div>
             <div className="text-[10px] text-muted-foreground">{m.sub}</div>
           </div>
         ))}

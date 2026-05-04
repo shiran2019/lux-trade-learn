@@ -16,7 +16,7 @@ const ticker = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40">
+    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-24 px-4 sm:px-6 lg:px-8">
       {/* Background chart */}
       <div className="absolute inset-0 grid-bg opacity-40" />
       <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
@@ -26,34 +26,36 @@ export function Hero() {
       <div className="absolute -left-32 top-40 h-72 w-72 rounded-md bg-[oklch(0.82_0.14_86/0.25)] blur-3xl animate-glow-pulse" />
       <div className="absolute -right-32 top-60 h-96 w-96 rounded-md bg-[oklch(0.78_0.16_235/0.2)] blur-3xl animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
 
-      <div className="relative mx-auto max-w-7xl px-4">
+      <div className="relative mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs animate-fade-up">
+          <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs animate-fade-up">
             <span className="flex h-2 w-2 rounded-md bg-bull animate-pulse" />
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             <span className="font-medium text-foreground">AI-powered learning · Markets open</span>
           </div>
 
-          <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            <span className="relative inline-block px-3 py-0.5">
-              <span className="hero-blur-primary absolute inset-0 rounded-lg backdrop-blur-2xl" />
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <span className="relative inline-block px-2 sm:px-3 py-0.5">
+              <span className="hero-blur-primary absolute inset-0 rounded-lg backdrop-blur-sm" />
               <span className="relative">Learn Forex Trading</span>
             </span>
             <br />
-            <span className="relative mt-1 inline-block px-3 py-0.5">
-              <span className="hero-blur-secondary absolute inset-0 rounded-lg backdrop-blur-2xl" />
+            <span className="relative mt-1 inline-block px-2 sm:px-3 py-0.5">
+              <span className="hero-blur-secondary absolute inset-0 rounded-lg backdrop-blur-sm" />
               <span className="relative bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-aurora)" }}>Visually with AI</span>
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: "0.2s" }}>
             Free forex trading education platform with AI tutors, interactive simulators, gold scalper strategies, and real-time technical analysis — no jargon, no gimmicks. Perfect for US traders.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button variant="hero" size="xl">
-              Start Learning <ArrowRight className="h-4 w-4" />
-            </Button>
+            <Link to="/free-tools">
+              <Button variant="hero" size="xl">
+                Free Tools <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
             <Link to="/tools">
               <Button variant="gold" size="xl">
                 <Play className="h-4 w-4" /> Open Learning Lab

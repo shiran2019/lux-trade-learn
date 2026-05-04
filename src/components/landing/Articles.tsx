@@ -11,31 +11,31 @@ const articles = [
 
 export function Articles() {
   return (
-    <section id="articles" className="relative py-28">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+    <section id="articles" className="relative py-16 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6">
           <div>
             <div className="mb-3 inline-block rounded-md border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-widest text-primary">Learning Hub</div>
-            <h2 className="font-display text-4xl font-bold sm:text-5xl">Fresh, focused <span className="text-gradient-gold">articles</span></h2>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">Fresh, focused <span className="text-gradient-gold">articles</span></h2>
           </div>
           <div className="flex flex-wrap gap-2">
             {["All", "Basics", "Technical", "Risk", "Psychology"].map((c, i) => (
-              <button key={c} className={`rounded-md px-4 py-1.5 text-xs transition-colors ${i === 0 ? "bg-primary text-primary-foreground" : "glass text-muted-foreground hover:text-foreground"}`}>{c}</button>
+              <button key={c} className={`rounded-md px-3 sm:px-4 py-1.5 text-xs transition-colors ${i === 0 ? "bg-primary text-primary-foreground" : "glass text-muted-foreground hover:text-foreground"}`}>{c}</button>
             ))}
           </div>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((a) => (
             <article key={a.title} className="group glass hover-lift overflow-hidden rounded-md">
-              <div className="relative h-40 overflow-hidden border-b border-border/60" style={{ background: `linear-gradient(135deg, ${a.color}/0.2, transparent)` }}>
+              <div className="relative h-32 sm:h-40 overflow-hidden border-b border-border/60" style={{ background: `linear-gradient(135deg, ${a.color}/0.2, transparent)` }}>
                 <div className="absolute inset-0 grid-bg opacity-50" />
                 <AnimatedChart className="absolute inset-0 h-full w-full opacity-70 transition-transform duration-500 group-hover:scale-105" />
               </div>
-              <div className="p-5">
-                <div className="text-xs uppercase tracking-widest" style={{ color: a.color }}>{a.cat}</div>
-                <h3 className="mt-2 font-display text-lg font-semibold leading-snug transition-colors group-hover:text-primary">{a.title}</h3>
-                <div className="mt-3 text-xs text-muted-foreground">{a.time} read</div>
+              <div className="p-3 sm:p-5">
+                <div className="text-[10px] sm:text-xs uppercase tracking-widest" style={{ color: a.color }}>{a.cat}</div>
+                <h3 className="mt-2 font-display text-base sm:text-lg font-semibold leading-snug transition-colors group-hover:text-primary">{a.title}</h3>
+                <div className="mt-2 sm:mt-3 text-xs text-muted-foreground">{a.time} read</div>
               </div>
             </article>
           ))}

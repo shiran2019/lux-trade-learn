@@ -265,7 +265,7 @@ function PromptLibrary() {
         {PROMPT_TEMPLATES.map((t, i) => (
           <button key={t.category} onClick={() => { setActiveTab(i); setExpandedPrompt(null); }}
             className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-medium transition-all ${
-              activeTab === i ? "bg-white shadow-sm text-foreground border border-border/40" : "text-muted-foreground hover:text-foreground"
+              activeTab === i ? "bg-white shadow-sm text-foreground dark:text-black border border-border/40" : "text-muted-foreground hover:text-foreground"
             }`}>
             <span className={`flex h-5 w-5 items-center justify-center rounded-md ${cat.color} ${activeTab === i ? "" : "opacity-60"}`}>
               {t.icon}

@@ -35,17 +35,17 @@ const features = [
 
 export function Features() {
   return (
-    <section id="learn" className="relative py-28" aria-label="Platform Features">
+    <section id="learn" className="relative py-16 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8" aria-label="Platform Features">
       {/* subtle radial background */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_40%_at_50%_50%,oklch(0.18_0.06_262/0.35),transparent)]" />
 
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <div className="mb-3 inline-block rounded-md border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-widest text-primary">Trading Platform</div>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
             Free Forex Trading <span className="text-gradient-gold">Education Platform</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Complete trading education suite — interactive simulators, AI tutors, technical analysis tools, and premium trading bots. Everything you need for US-based traders.</p>
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground">Complete trading education suite — interactive simulators, AI tutors, technical analysis tools, and premium trading bots. Everything you need for US-based traders.</p>
         </div>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-3">
