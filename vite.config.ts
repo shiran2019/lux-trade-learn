@@ -11,7 +11,6 @@ export default defineConfig({
     react(),
     tsConfigPaths(),
   ],
-  base: '/lux-trade-learn/',
   build: {
     outDir: 'dist/client',
     emptyOutDir: true,
