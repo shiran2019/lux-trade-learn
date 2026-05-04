@@ -5,30 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TradeMasteryAI - Loading...</title>
     <script>
-      // Handle GitHub Pages SPA routing
-      // This 404.html redirects to index.html while preserving the requested path
-      (function() {
-        // Get the redirect path from query string (set by the redirect logic below)
-        const redirect = sessionStorage.getItem('redirect');
-        
-        // If we have a stored redirect, use it and clear it
-        if (redirect) {
-          sessionStorage.removeItem('redirect');
-          window.location.replace(redirect);
-        } else {
-          // Store current location for redirect after index.html loads
-          // This preserves the path for the SPA router
-          const pathname = window.location.pathname;
-          const search = window.location.search;
-          const hash = window.location.hash;
-          
-          // Store the intended path
-          sessionStorage.setItem('redirect', pathname + search + hash);
-          
-          // Redirect to index.html
-          window.location.replace('/');
-        }
-      })();
+      // SPA redirect for GitHub Pages
+      // Encodes the path into a query string and redirects to the base URL
+      // so the SPA router can restore it. pathSegmentsToKeep=1 keeps /lux-trade-learn.
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
   </head>
   <body>
