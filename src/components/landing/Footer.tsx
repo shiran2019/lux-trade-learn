@@ -47,7 +47,7 @@ export function Footer() {
         <div className="mt-8 sm:mt-14 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-4 sm:pt-6 text-[10px] sm:text-xs text-muted-foreground sm:flex-row">
           <div className="flex items-center gap-2">
             <span>© {new Date().getFullYear()} TradeMasteryAI.com. All rights reserved.</span>
-            <span className="text-muted-foreground/80">Version 2</span>
+            <span className="text-muted-foreground/80">Version 1.03</span>
           </div>
           <div className="max-w-xl text-center sm:text-right">Risk warning: Trading foreign exchange carries a high level of risk and may not be suitable for all investors.</div>
         </div>

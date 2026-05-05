@@ -306,13 +306,13 @@ html.dark body {
       background-image: var(--gradient-glass);
     }
     .glass-strong {
-      background-image: linear-gradient(135deg, oklch(1 0 0 / 0.95), oklch(1 0 0 / 0.8));
+      background-image: linear-gradient(135deg, oklch(1 0 0 / 0.95), oklch(100% 0.00011 271.152 / 0.178));
     }
     html.dark .glass {
-      background-image: linear-gradient(135deg, oklch(18.133% 0.06561 295.347 / 0.579), oklch(21.031% 0.09215 294.651 / 0.388));
+      background-image: linear-gradient(135deg, oklch(100% 0.00011 271.152 / 0.338), oklch(21.031% 0.09215 294.651 / 0.908));
     }
     html.dark .glass-strong {
-      background-image: linear-gradient(135deg, oklch(0% 0 0 / 0.548), oklch(0% 0 0 / 0.471));
+      background-image: linear-gradient(135deg, oklch(100% 0.00011 271.152 / 0.773), oklch(92.494% 0.00011 271.152 / 0.811));
     }
   }
 
