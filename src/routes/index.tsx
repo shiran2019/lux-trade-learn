@@ -29,10 +29,11 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
-        <Features />
+         <FreeTools preview={true} />
+        {/* <Features /> */}
      {/* /\   <LearningPath /> */}
         <Playground />
-        <FreeTools preview={true} />
+       
         <Trust />
       </main>
       <Footer />

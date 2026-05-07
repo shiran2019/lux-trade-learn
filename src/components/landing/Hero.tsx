@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Play } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { AnimatedChart } from "./AnimatedChart";
 
 const ticker = [
   { p: "EUR/USD", v: "1.0823", d: "+0.42%", up: true },
@@ -16,38 +15,40 @@ const ticker = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-24 px-4 sm:px-6 lg:px-8">
-      {/* Background chart */}
-      <div className="absolute inset-0 grid-bg opacity-40" />
-      <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
-      <div className="absolute inset-x-0 top-20 -z-10 opacity-30">
-        <AnimatedChart className="h-[500px] w-full" />
-      </div>
-      <div className="absolute -left-32 top-40 h-72 w-72 rounded-md bg-[oklch(0.82_0.14_86/0.25)] blur-3xl animate-glow-pulse" />
-      <div className="absolute -right-32 top-60 h-96 w-96 rounded-md bg-[oklch(0.78_0.16_235/0.2)] blur-3xl animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
+    <section className="dark relative flex min-h-screen flex-col overflow-hidden px-4 pt-28 pb-12 sm:px-6 sm:pt-32 sm:pb-14 lg:px-8">
+      {/* Video background */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/videos/Bg-Video.mp4" type="video/mp4" />
+      </video>
 
-      <div className="relative mx-auto max-w-7xl">
+      {/* Readability overlays */}
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_42%),linear-gradient(to_bottom,rgba(8,14,28,0.35),rgba(8,14,28,0.82))]" />
+
+      <div className="relative z-10 mx-auto my-auto w-full max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs animate-fade-up">
-            <span className="flex h-2 w-2 rounded-md bg-bull animate-pulse" />
-            <Sparkles className="h-3.5 w-3.5 text-primary" />
-            <span className="font-medium text-foreground">AI-powered learning · Markets open</span>
-          </div>
+        
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-white drop-shadow-[0_8px_28px_rgba(0,0,0,0.45)] sm:text-5xl md:text-6xl lg:text-7xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <span className="relative inline-block px-2 sm:px-3 py-0.5">
-              <span className="hero-blur-primary absolute inset-0 rounded-lg backdrop-blur-sm" />
-              <span className="relative">Learn Forex Trading</span>
+              <span className="absolute inset-0 rounded-lg bg-[oklch(0.1_0.022_268/0.40)] backdrop-blur-sm" />
+              <span className="relative">Forex Trading</span>
             </span>
             <br />
             <span className="relative mt-1 inline-block px-2 sm:px-3 py-0.5">
-              <span className="hero-blur-secondary absolute inset-0 rounded-lg backdrop-blur-sm" />
-              <span className="relative bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-aurora)" }}>Visually with AI</span>
+              <span className="absolute inset-0 rounded-lg bg-[oklch(0.1_0.022_268/0.35)] backdrop-blur-sm" />
+              <span className="relative bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, oklch(0.65 0.18 268) 0%, oklch(0.72 0.2 295) 45%, oklch(0.78 0.17 78) 100%)" }}>with AI</span>
             </span>
           </h1>
 
-          <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Free forex trading education platform with AI tutors, interactive simulators, gold scalper strategies, and real-time technical analysis — no jargon, no gimmicks. Perfect for US traders.
+          <p className="mx-auto mt-4 max-w-2xl text-base text-white/85 animate-fade-up sm:mt-6 sm:text-lg" style={{ animationDelay: "0.2s" }}>
+            Master forex trading with AI-powered tools and expert guides. Learn how to leverage AI for smarter trading decisions with free access to premium simulators, gold scalper strategies and real-time analysis
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
@@ -63,20 +64,20 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-6 text-xs text-muted-foreground animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            <span>★ 4.9 from 12,400+ learners</span>
-            <span className="hidden sm:inline">· No credit card required</span>
+          <div className="mt-8 flex items-center justify-center gap-6 text-xs text-white/75 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            <span className="rounded-full border border-white/20 bg-black/25 px-3 py-1">★ 4.9 from 12,400+ learners</span>
+            <span className="hidden rounded-full border border-white/20 bg-black/25 px-3 py-1 sm:inline">No credit card required</span>
           </div>
         </div>
       </div>
 
       {/* Live ticker */}
-      <div className="relative mt-20 overflow-hidden border-y border-border/60 bg-secondary/40 py-3 backdrop-blur">
+      <div  className="relative z-10 mt-10 overflow-hidden rounded-xl border border-white/15 bg-black/35 py-3 backdrop-blur-sm sm:mt-14">
         <div className="flex w-max gap-12 animate-ticker">
           {[...ticker, ...ticker].map((t, i) => (
             <div key={i} className="flex items-center gap-3 whitespace-nowrap text-sm">
-              <span className="font-display font-semibold tracking-wide">{t.p}</span>
-              <span className="text-muted-foreground">{t.v}</span>
+              <span className="font-display font-semibold tracking-wide text-white">{t.p}</span>
+              <span className="text-white/70">{t.v}</span>
               <span className={`flex items-center gap-1 font-semibold ${t.up ? "text-bull" : "text-bear"}`}>
                 <span>{t.d}</span>
                 <span className="text-[10px]">{t.up ? "▲" : "▼"}</span>

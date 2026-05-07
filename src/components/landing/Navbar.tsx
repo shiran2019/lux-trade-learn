@@ -14,10 +14,10 @@ export function Navbar() {
 
   const navItems = [
     { label: "Home", to: "/" },
-    { label: "Learning Lab", to: "/tools" },
     { label: "Free Tools", to: "/free-tools" },
-    { label: "AI", to: "/ai" },
-    { label: "About", to: "/about" },
+    { label: "AI Learning", to: "/ai" },
+     { label: "Learning Lab", to: "/tools" },
+    // { label: "About", to: "/about" },
   ];
 
   return (

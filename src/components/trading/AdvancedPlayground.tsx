@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, use } from "react";
 import { BarChart2, TrendingUp, Calculator, BookOpen, Lock, Star, ChevronRight, Award, HelpCircle } from "lucide-react";
 import { LiveChart } from "./LiveChart";
 import { TradePanel } from "./TradePanel";
@@ -130,7 +130,6 @@ export function AdvancedPlayground() {
   const [sessionStats, setSessionStats] = useState<SessionStats>({
     tradesOpened: 0, tradesClosed: 0, totalPnl: 0, wins: 0, losses: 0,
   });
-  const [showLevelModal, setShowLevelModal] = useState(false);
   const tour = useTour();
 
   // Auto-start tour on first page load only
@@ -165,13 +164,15 @@ export function AdvancedPlayground() {
     const idx = LEVEL_ORDER.indexOf(level);
     if (idx < LEVEL_ORDER.length - 1) {
       setLevel(LEVEL_ORDER[idx + 1]);
-      setShowLevelModal(true);
-      setTimeout(() => setShowLevelModal(false), 3000);
     }
   };
 
   const availableTabs = TABS.filter((t) => isLevelUnlocked(t, level));
   const lockedTabs = TABS.filter((t) => !isLevelUnlocked(t, level));
+
+  useEffect(() => {
+    upgradeLevel(); // Auto-upgrade to next level for demo purposes
+  }, []);
 
   return (
     <div className="flex flex-col gap-4">
@@ -180,17 +181,6 @@ export function AdvancedPlayground() {
         active={tour.active} stepIndex={tour.stepIndex} steps={tour.steps}
         onNext={tour.next} onPrev={tour.prev} onClose={tour.stop}
       />
-
-      {/* Level upgrade toast */}
-      {showLevelModal && (
-        <div className="fixed right-4 top-4 z-50 flex items-center gap-3 rounded-xl border border-primary/20 bg-white px-4 py-3 shadow-[var(--shadow-elevated)] animate-fade-up">
-          <Star className="h-5 w-5 text-gold fill-current" />
-          <div>
-            <div className="text-sm font-semibold">Level Up!</div>
-            <div className="text-xs text-muted-foreground">{LEVEL_CONFIG[level].label} unlocked — {LEVEL_CONFIG[level].desc}</div>
-          </div>
-        </div>
-      )}
 
       {/* Level + stats bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
